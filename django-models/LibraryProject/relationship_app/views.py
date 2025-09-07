@@ -6,6 +6,8 @@ from django.contrib.auth.forms import UserCreationForm
 from relationship_app/list_books.html
 from relationship_app/library_detail.html
 from .models import Library
+from django.views.generic.detail import DetailView
+
 def list_books(request):
     books = Book.objects.all()
     return render(request, "list_books.html", {"books": books})
