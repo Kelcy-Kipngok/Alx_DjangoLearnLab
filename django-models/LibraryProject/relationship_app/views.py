@@ -10,7 +10,7 @@ from django.views.generic.detail import DetailView
 from relationship_app/logout.html
 from relationship_app/login.html
 from relationship_app/register.html
-
+from django.contrib.auth import login
 
 # Function-based view: List all books
 def list_books(request):
