@@ -18,3 +18,4 @@ views.register", "LogoutView.as_view(template_name=", "LoginView.as_view(templat
     path('books/edit/<int:pk>/', edit_book, name='edit_book'),
     path('books/delete/<int:pk>/', delete_book, name='delete_book'),
 ]
+add_book/", "edit_book/
