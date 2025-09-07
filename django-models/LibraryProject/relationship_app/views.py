@@ -23,7 +23,13 @@ def is_librarian(user):
 
 def is_member(user):
     return hasattr(user, 'userprofile') and user.userprofile.role == 'Member'
+def is_member(user):
+    return user.is_authenticated and hasattr(user, 'userprofile') and user.userprofile.role == 'Member'
 
+@login_required(login_url='/relationship_app/login/')
+@user_passes_test(is_member, login_url='/relationship_app/login/')
+def member_view(request):
+    return render(request, 'relationship_app/member_view.html')
 # Admin view
 @user_passes_test(is_admin)
 def admin_view(request):
