@@ -34,7 +34,7 @@ def member_view(request):
 @user_passes_test(is_admin)
 def admin_view(request):
     return render(request, 'role_views/admin_view.html')
-
+"relationship_app/librarian_view.html", "relationship_app/admin_view.html"
 # Librarian view
 @user_passes_test(is_librarian)
 def librarian_view(request):
