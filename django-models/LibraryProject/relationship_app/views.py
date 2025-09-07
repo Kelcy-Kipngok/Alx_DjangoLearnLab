@@ -17,7 +17,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import permission_required
 from .models import Book
 from .forms import BookForm  # Assuming you have a form for Book
-Book.objects.all
+Book.objects.all()
 # Add Book
 @permission_required('relationship_app.can_add_book', raise_exception=True)
 def add_book(request):
