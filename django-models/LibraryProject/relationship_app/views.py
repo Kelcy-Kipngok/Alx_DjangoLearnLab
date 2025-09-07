@@ -7,15 +7,40 @@ from relationship_app/list_books.html
 from relationship_app/library_detail.html
 from .models import Library
 from django.views.generic.detail import DetailView
+from relationship_app/logout.html
+from relationship_app/login.html
+from relationship_app/register.html
 
+
+# Function-based view: List all books
 def list_books(request):
-    books = Book.objects.all()
-    return render(request, "list_books.html", {"books": books})
+    books = Book.objects.select_related('author').all()
+    return render(request, "relationship_app/list_books.html", {"books": books})
 
+# Class-based view: Library details
 class LibraryDetailView(DetailView):
     model = Library
-    template_name = "library_detail.html"
+    template_name = "relationship_app/library_detail.html"
     context_object_name = "library"
+
+# Login view
+class CustomLoginView(LoginView):
+    template_name = "relationship_app/login.html"
+
+# Logout view
+class CustomLogoutView(LogoutView):
+    template_name = "relationship_app/logout.html"
+
+# User registration view
+def register(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = UserCreationForm()
+    return render(request, "relationship_app/register.html", {"form": form})
 
 class CustomLoginView(LoginView):
     template_name = "relationship_app/login.html"
