@@ -66,7 +66,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'LibraryProject.wsgi.application'
-AUTH_USER_MODEL = "accounts.CustomUser"
+AUTH_USER_MODEL = "bookshelf.CustomUser"
 
 # Media settings (for profile photos)
 MEDIA_URL = "/media/"
