@@ -10,6 +10,51 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 "SECURE_BROWSER_XSS_FILTER", "X_FRAME_OPTIONS", "SECURE_CONTENT_TYPE_NOSNIFF", "CSRF_COOKIE_SECURE", "SESSION_COOKIE_SECURE
 from pathlib import Path
+# LibraryProject/settings.py
+
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# SECURITY WARNING: don’t run with DEBUG turned on in production!
+DEBUG = False  # Debug should be False in production for security
+
+ALLOWED_HOSTS = ["yourdomain.com", "www.yourdomain.com"]
+
+# ------------------------------
+# 🔐 HTTPS & Security Settings
+# ------------------------------
+
+# Redirect all HTTP requests to HTTPS
+SECURE_SSL_REDIRECT = True  
+
+# Enforce HTTP Strict Transport Security (HSTS)
+# Instructs browsers to only use HTTPS for future requests
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to all subdomains
+SECURE_HSTS_PRELOAD = True  # Allow preloading in browsers
+
+# Ensure cookies are only sent over HTTPS
+SESSION_COOKIE_SECURE = True  
+CSRF_COOKIE_SECURE = True  
+
+# Security headers for browsers
+X_FRAME_OPTIONS = "DENY"  # Prevents clickjacking
+SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevents MIME type sniffing
+SECURE_BROWSER_XSS_FILTER = True  # Enables browser XSS protection
+
+# ------------------------------
+# CSRF Protection
+# ------------------------------
+# Ensure CSRF tokens are required in all POST forms
+CSRF_TRUSTED_ORIGINS = ["https://yourdomain.com"]
+
+# ------------------------------
+# Static & Media (served securely via HTTPS in production)
+# ------------------------------
+STATIC_URL = "/static/"
+MEDIA_URL = "/media/"
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
