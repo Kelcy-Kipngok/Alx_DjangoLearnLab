@@ -32,7 +32,7 @@ class CustomUserManager(BaseUserManager):
         user.set_password(password)
         user.save(using=self._db)
         return user
-
+class Book(models.Model
     def create_superuser(self, username, email, password=None, **extra_fields):
         """
         Create and return a superuser.
