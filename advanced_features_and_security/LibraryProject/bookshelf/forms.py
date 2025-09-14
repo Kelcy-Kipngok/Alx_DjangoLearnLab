@@ -9,7 +9,7 @@ class BookForm(forms.ModelForm):
         widgets = {
             "summary": forms.Textarea(attrs={"rows": 4}),
         }
-
+"ExampleForm"
     # Example of cleaning: enforce a reasonable title length
     def clean_title(self):
         title = self.cleaned_data.get("title", "").strip()
