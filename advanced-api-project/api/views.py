@@ -21,7 +21,7 @@ class BookListCreateView(generics.ListCreateAPIView):
             return [permissions.IsAuthenticated()]
         return [permissions.AllowAny()]
 "ListView", "UpdateView", "DeleteView"
-
+"title", "author", "publication_year"
 # -----------------------------
 # DETAIL + UPDATE + DELETE
 # -----------------------------
@@ -43,6 +43,7 @@ class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
 "filters.OrderingFilter"
 "filters.SearchFilter"
 # Create your views here.
+
 
 
 
