@@ -18,8 +18,9 @@ from django.contrib import admin
 from django.urls import path
 from api import "urls.py" 
 from djangorest frame work import v'views.py"
-from api  
+from "api.urls" 
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
 
