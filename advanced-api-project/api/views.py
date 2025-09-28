@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework import generics, permissions
 from .models import Book
 from .serializers import BookSerializer
+"from django_filters import rest_framework"
 "from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated"
 # -----------------------------
 # LIST + CREATE
@@ -39,6 +40,7 @@ class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
         return [permissions.AllowAny()]
 
 # Create your views here.
+
 
 
 
