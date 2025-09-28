@@ -19,7 +19,7 @@ class BookListCreateView(generics.ListCreateAPIView):
         if self.request.method == "POST":
             return [permissions.IsAuthenticated()]
         return [permissions.AllowAny()]
-
+"ListView", "UpdateView", "DeleteView"
 
 # -----------------------------
 # DETAIL + UPDATE + DELETE
@@ -39,4 +39,5 @@ class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
         return [permissions.AllowAny()]
 
 # Create your views here.
+
 
