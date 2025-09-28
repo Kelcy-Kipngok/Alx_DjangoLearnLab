@@ -39,9 +39,11 @@ class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
             return [permissions.IsAuthenticated()]
         return [permissions.AllowAny()]
  function filters.ordering filter 
-"filter.searchingfilter"
+"filter.Searchfilter"
+"filters.OrderingFilter"
 "filters.OrderingFilter"
 # Create your views here.
+
 
 
 
