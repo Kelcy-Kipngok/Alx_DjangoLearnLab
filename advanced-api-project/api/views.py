@@ -41,8 +41,9 @@ class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
  function filters.ordering filter 
 "filter.Searchfilter"
 "filters.OrderingFilter"
-"filters.OrderingFilter"
+"filters.SearchFilter"
 # Create your views here.
+
 
 
 
