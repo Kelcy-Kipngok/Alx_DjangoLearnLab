@@ -38,8 +38,11 @@ class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
         if self.request.method in ["PUT", "PATCH", "DELETE"]:
             return [permissions.IsAuthenticated()]
         return [permissions.AllowAny()]
-
+ function filters.ordering filter 
+"filter.searchingfilter"
+"filters.OrderingFilter"
 # Create your views here.
+
 
 
 
