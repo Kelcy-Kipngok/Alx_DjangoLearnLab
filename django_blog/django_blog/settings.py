@@ -121,3 +121,37 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# django_blog/django_blog/settings.py (important snippets to add/edit)
+
+# Add 'blog' to INSTALLED_APPS
+INSTALLED_APPS = [
+    # default django apps...
+    'django.contrib.staticfiles',
+    'blog',
+]
+
+# Templates
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'],  # optional project-level templates dir
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                # default processors...
+            ],
+        },
+    },
+]
+
+# Static & media
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']  # optional
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+# Auth redirects
+LOGIN_REDIRECT_URL = 'blog:post-list'
+LOGOUT_REDIRECT_URL = 'blog:post-list'
+LOGIN_URL = 'blog:login'
