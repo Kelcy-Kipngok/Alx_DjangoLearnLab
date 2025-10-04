@@ -1,0 +1,41 @@
+<!-- django_blog/blog/templates/blog/base.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>{% block title %}Django Blog{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="{% url 'blog:post-list' %}">Home</a> |
+      <a href="{% url 'blog:post-create' %}">New Post</a> |
+      <a href="{% url 'blog:search' %}?q=">Search</a> |
+      {% if user.is_authenticated %}
+        <a href="{% url 'blog:profile' %}">Profile ({{ user.username }})</a> |
+        <a href="{% url 'blog:logout' %}">Logout</a>
+      {% else %}
+        <a href="{% url 'blog:login' %}">Login</a> |
+        <a href="{% url 'blog:register' %}">Register</a>
+      {% endif %}
+    </nav>
+  </header>
+
+  <main>
+    {% if messages %}
+      <ul class="messages">
+        {% for m in messages %}
+          <li>{{ m }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; Django Blog</p>
+  </footer>
+</body>
+</html>
