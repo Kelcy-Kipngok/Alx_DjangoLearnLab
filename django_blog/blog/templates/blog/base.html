@@ -1,3 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Blog</title>
+  <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+  <header>
+    <img src="{% static 'blog/images/logo.png' %}" alt="Logo">
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <script src="{% static 'blog/js/script.js' %}"></script>
+</body>
+</html>
 <!-- django_blog/blog/templates/blog/base.html -->
 <!doctype html>
 <html lang="en">
