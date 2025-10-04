@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Post, Comment, Tag, Profile
 from .forms import PostForm, CommentForm, UserRegisterForm, UserUpdateForm, ProfileUpdateForm
-
+"CommentCreateView", "CommentUpdateView", "CommentDeleteView"
 # Post views (CRUD)
 class PostListView(ListView):
     model = Post
@@ -135,4 +135,5 @@ def posts_by_tag(request, tag_name):
     return render(request, 'blog/tag_posts.html', {'tag': tag, 'posts': posts})
 
 # Create your views here.
+
 
