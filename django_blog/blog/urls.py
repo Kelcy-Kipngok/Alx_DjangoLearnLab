@@ -28,4 +28,4 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('tags/<str:tag_name>/', views.posts_by_tag, name='tag-posts'),
 ]
-post/<int:pk>/delete/", "post/<int:pk>/update/", "post/new/"
+"post/<int:pk>/delete/", "post/<int:pk>/update/", "post/new/"
