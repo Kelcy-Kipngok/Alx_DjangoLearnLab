@@ -150,8 +150,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']  # optional
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
+"USER", "PORT"
 # Auth redirects
 LOGIN_REDIRECT_URL = 'blog:post-list'
 LOGOUT_REDIRECT_URL = 'blog:post-list'
 LOGIN_URL = 'blog:login'
+
