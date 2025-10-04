@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
 from pathlib import Path
-
+"taggit"
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_URL = '/static/'
@@ -172,5 +172,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 LOGIN_REDIRECT_URL = 'blog:post-list'
 LOGOUT_REDIRECT_URL = 'blog:post-list'
 LOGIN_URL = 'blog:login'
+
 
 
