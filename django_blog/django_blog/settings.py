@@ -9,6 +9,23 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_URL = '/static/'
+
+# Where collectstatic will gather files
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Where Django looks during development
+STATICFILES_DIRS = [
+    BASE_DIR / "blog" / "static",
+]
+
+# Templates directory already in TEMPLATES, but ensure:
+TEMPLATES[0]["DIRS"] = [BASE_DIR / "blog" / "templates"]
 
 from pathlib import Path
 
@@ -155,4 +172,5 @@ MEDIA_ROOT = BASE_DIR / 'media'
 LOGIN_REDIRECT_URL = 'blog:post-list'
 LOGOUT_REDIRECT_URL = 'blog:post-list'
 LOGIN_URL = 'blog:login'
+
 
