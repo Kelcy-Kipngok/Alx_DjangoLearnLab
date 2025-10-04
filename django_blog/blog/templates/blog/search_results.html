@@ -1,0 +1,6 @@
+<!-- django_blog/blog/templates/blog/search_results.html -->
+{% extends 'blog/base.html' %}
+{% block content %}
+  <h2>Search results for "{{ query }}"</h2>
+  {% include 'blog/post_list.html' with posts=results %}
+{% endblock %}
